@@ -9,21 +9,38 @@ class SaudacaoUtilTest {
 
     @Test
     public void deveRetornarBoaTardeQuandoHoraEstiverManhaValida() {
-        String saudacaoBomDia = SaudacaoUtil.saudar(9);
-        assertEquals("Bom dia", saudacaoBomDia, "Saudação incorreta!");
+        int horaValida = 9;
+        String saudarBomDia = SaudacaoUtil.saudar(horaValida);
+        assertEquals("Bom dia", saudarBomDia, "Saudação incorreta!");
+    }
+
+    @Test
+    public void deveRetornarBoaTardeQuandoHoraEstiverManhaValidaAPartirDas5h() {
+        int horaValida = 5;
+        String saudarBomDia = SaudacaoUtil.saudar(horaValida);
+        assertEquals("Bom dia", saudarBomDia, "Saudação incorreta!");
     }
 
     //shouldReturnBoaTardeWhenTimeIsAfternoon
     @Test
     void deveRetornarBoaTardeQuandoHoraEstiverDeTardeValida() {
-        String saudacaoBoaTarde = SaudacaoUtil.saudar(14);
-        assertEquals("Boa tarde", saudacaoBoaTarde, "Saudação incorreta!");
+        int horaValida = 14;
+        String saudarBoaTarde = SaudacaoUtil.saudar(horaValida);
+        assertEquals("Boa tarde", saudarBoaTarde, "Saudação incorreta!");
     }
 
     @Test
     void deveRetornarBoaNoiteQuandoHoraEstiverDeNoiteValida() {
-        String saudacaoBoaNoite = SaudacaoUtil.saudar(20);
-        assertEquals("Boa noite", saudacaoBoaNoite, "Saudação incorreta!");
+        int horaValida = 22;
+        String saudarBoaNoite = SaudacaoUtil.saudar(horaValida);
+        assertEquals("Boa noite", saudarBoaNoite, "Saudação incorreta!");
+    }
+
+    @Test
+    void deveRetornarBoaNoiteQuandoHoraEstiverDeNoiteValidaAPartirDas4h() {
+        int horaValida = 4;
+        String saudarBoaNoite = SaudacaoUtil.saudar(horaValida);
+        assertEquals("Boa noite", saudarBoaNoite, "Saudação incorreta!");
     }
 
     @Test
