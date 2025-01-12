@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-class ContaBancariaTest {
+public  class ContaBancariaTest {
 
     @Test
     void deveLancarExceptionQuandoSaldoForNulo() {
